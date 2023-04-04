@@ -1,0 +1,29 @@
+
+<%- include ('./partials/header.ejs')%>
+<body>
+  <div class="col-md-6">
+   <h2>Admin DashBoard </h2>
+  </div>
+  <a href="/users/logout"><Button class="btn btn-primary btn-sm" id="logout">Log out</Button></a>
+  <hr>
+  <div class="container">
+    <% if (nonAdminUsers.length > 0 ) { %>
+      <table class="table table-striped table-hover">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+        </tr>
+        <% nonAdminUsers.forEach(user => { %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.mobile %></td>
+          </tr>
+        <% }); %>
+      </table>
+    <% } else { %>
+      <p>No users yet</p>
+    <% } %>
+  </div>
+</body>

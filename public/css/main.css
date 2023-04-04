@@ -1,0 +1,18 @@
+h2 {
+  color: blue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 40px;
+}
+
+#paragraph {
+  margin-top: 40px;
+}
+
+.container {
+  background-color: azure;
+}
+
+#logout {
+float: right;
+margin-right: 10px;
+}
