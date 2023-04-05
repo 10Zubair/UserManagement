@@ -1,8 +1,26 @@
 
 <%- include ('./partials/header.ejs')%>
-<body>
+<body class="user-body">
   <div class="col-md-6">
    <h2>User DashBoard </h2>
   </div>
   <a href="/users/logout"><Button class="btn btn-primary btn-sm" id="logout">Log out</Button></a>
+  <hr style="margin-top: 5%;">
+  <div class="profile-area" >
+    <div style="text-align: center;">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card" style="width: 100%;">
+            <div class="img1"><img src="" alt=""></div>
+            <div class="img2"><img src="" alt=""></div>
+            <h2><%= user.name %></h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda itaque voluptatum laboriosam exercitationem voluptatibus quam autem maxime ad voluptates, ipsum, nam quas atque asperiores recusandae molestias ea ducimus hic aspernatur?</p>
+            <div class="actions">
+              <a href="/users/<%= user._id%>"><button class="btn btn-primary btn-sm" >Show Profile</button></a> | <a href="/users/edit/<%= user._id%>"><button class="btn btn-primary btn-sm">Edit Profile</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>

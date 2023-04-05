@@ -1,5 +1,6 @@
 var csv = require('csvtojson');
 const userModel = require('../models/User');
+const bcrypt = require('bcrypt');
 
 const importUser = async(req, res) => {
   try {
@@ -9,10 +10,13 @@ const importUser = async(req, res) => {
     for (const user of response) {
       const existingUser = await userModel.findOne({ email: user.email });
       if (!existingUser) {
+        var salt = await bcrypt.genSalt(10);
+
+        const password = await bcrypt.hash(user.password, salt);
         userArray.push({
           name: user.name,
           email: user.email,
-          password: user.password
+          password: password
         });
       }
     }
