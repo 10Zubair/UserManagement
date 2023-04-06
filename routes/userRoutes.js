@@ -13,9 +13,8 @@ userRouter.get('/user_dashboard', userController.homePage);
 userRouter.get('/users/logout', userController.logout);
 userRouter.get('/users/:id', userController.show);
 userRouter.get('/users/edit/:id', userController.editPage);
+userRouter.put('/users/edit/:id',userController.uploads.single('profileImage'), userController.editProfile);
 userRouter.get('/users/profile/:id', userController.viewProfile);
 userRouter.get('/users/delete/:id', userController.deleteUser);
-
-userRouter.post('/users/edit/:id',userController.uploads.single('profileImage'), userController.editProfile);
 
 module.exports = userRouter;

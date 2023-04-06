@@ -1,4 +1,6 @@
-
+<% if (login_msg) { %>
+  <p class="text-success" style="margin-left: 15px;"><%= login_msg%></p>
+<% } %>
 <%- include ('./partials/header.ejs')%>
 <body>
   <div class="col-md-6">
@@ -6,6 +8,10 @@
   </div>
   <a href="/users/logout"><Button class="btn btn-primary btn-sm" id="logout">Log out</Button></a>
   <hr style="margin-top: 5%;">
+  <form action="" style="margin-left: 15px;">
+    <input type="text" placeholder="Name Email Mobile CNIC" name="search">
+    <input type="submit" value="Search">
+  </form>
   <div class="container">
     <% if (nonAdminUsers.length > 0 ) { %>
       <table class="table table-striped table-hover " style="margin-top: 5%;">
@@ -31,4 +37,11 @@
       <p>No users yet</p>
     <% } %>
   </div>
+  <div style="text-align: center;">
+    <% for (let pg = 1; pg <= totalPages; pg++) { %>
+      <a href="?page=<%= pg %>" style="font-size: 20px;"><%= pg %></a>
+    <% } %>
+  </div>
+  <br>
 </body>
+<%- include ('./partials/footer.ejs')%>

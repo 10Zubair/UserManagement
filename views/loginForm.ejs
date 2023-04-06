@@ -1,3 +1,10 @@
+<% if (message) {%>
+  <p class="text-success"><%= message %></p>
+<% } %>
+
+<% if (error_msg) {%>
+  <p class="text-danger"><%= error_msg %></p>
+<% } %>
 
 <%- include ('./partials/header.ejs')%>
 <body>
@@ -19,3 +26,4 @@
     </form>
   </div>
 </body>
+<%- include ('./partials/footer.ejs')%>

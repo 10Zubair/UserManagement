@@ -63,3 +63,9 @@ user-body {
   border: 7px solid #fff;
   margin-top: 10px;
 }
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}

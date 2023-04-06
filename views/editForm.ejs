@@ -1,0 +1,25 @@
+<%- include ('./partials/header.ejs')%>
+<body>
+  <h2>Edit Profile</h2>
+  <div class="container">
+    <form action="/users/edit/:id?_method=PUT" method="post" enctype="multipart/form-data">
+    
+      <label for="cnic">CNIC:</label>
+      <input type="text" id="cnic" name="cnic" class="form-control" required><br>
+    
+      <label for="mobileNum">Mobile Number:</label>
+      <input type="tel" id="mobileNum" name="mobileNum" class="form-control" required><br>
+
+      <label for="profileImage">Profile Image:</label>
+      <input type="file" id="profileImage" name="profileImage" required><br>
+    
+      <!-- <label for="pdf">PDF:</label>
+      <input type="file" id="pdf" name="pdf" required><br> -->
+    
+      <button type="submit" class="btn btn-primary " style="margin: 10px;">Save</button>
+    </form>
+  </div>
+
+</body>
+</html>
+<%- include ('./partials/footer.ejs')%>

@@ -6,6 +6,7 @@ const express = require('express');
 const dbConnection = require('./database/userManagementSystem');
 const rootDir = require('./utils/path');
 const dotenv = require('dotenv');
+const methodOverride = require('method-override');
 dotenv.config();
 //routes
 const userRoutes = require('./routes/userRoutes');
@@ -16,6 +17,7 @@ app.set('view engine', 'ejs');
 app.use(express.json());  
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 app.use('/css', express.static(path.join(rootDir, 'node_modules', 'bootstrap', 'dist', 'css')));
 
 const port = process.env.PORT
@@ -41,5 +43,5 @@ app.use(userApiRoutes);
 app.use(userRoutes);
 
 app.use((req, res, next) => {
-  res.status(404).send('404');
+  res.status(404).send('404 page not found');
 });

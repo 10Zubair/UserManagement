@@ -1,3 +1,6 @@
+<% if (login_msg) { %>
+  <p class="text-success" style="margin-left: 15px;"><%= login_msg%></p>
+<% } %>
 
 <%- include ('./partials/header.ejs')%>
 <body class="user-body">
@@ -24,3 +27,4 @@
     </div>
   </div>
 </body>
+<%- include ('./partials/footer.ejs')%>

@@ -1,0 +1,27 @@
+
+<%- include ('./partials/header.ejs')%>
+<body class="user-body">
+  <div class="col-md-6">
+   <h2>User Profile </h2>
+  </div>
+  <a href="/users/logout"><Button class="btn btn-primary btn-sm" id="logout">Log out</Button></a>
+  <hr style="margin-top: 5%;">
+  <div class="profile-area" style="margin-left: 35%;" >
+    <div style="text-align: center;">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card" style="width: 100%;">
+            <div class="img1"><img src="<%= user.profileImage%>" alt=""></div>
+            <h2><%= user.name %></h2>
+            <p>Cnic : <%= user.cnic%></p>
+            <p>Mobile : <%= user.mobileNum%></p>
+            <div class="actions">
+               <a href="/users/edit/<%= user._id%>"><button class="btn btn-primary btn-sm">Edit Profile</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include ('./partials/footer.ejs')%>
